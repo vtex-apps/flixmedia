@@ -1,19 +1,28 @@
-# Flixmedia
+# VTEX FlixMedia
 
-> Flixmedia first party app
+## Description
+VTEX FlixMedia
+https://flixmedia.eu/
 
-## Setup
+## Usage
 
-Open a terminal and type:
+This app uses our store builder with the blocks architecture. To know more about Store Builder [click here.](https://help.vtex.com/en/tutorial/understanding-storebuilder-and-stylesbuilder#structuring-and-configuring-our-store-with-object-object).
 
-```sh
-vtex install vtex.flixmedia@1.x
+To configure or customize this app, you need to import it in your dependencies in `manifest.json`.
+
+```json
+  dependencies: {
+    "vtex.flixmedia": "0.x"
+  }
 ```
 
-Open your admin in the Apps section:
+Just add `product-details.flixmedia` as a child in your `store.product` like so:
 
-https://YOURSTORENAME.myvtex.com/admin/apps/
-
-Click in Flixmedia
-
-Fill in your Flixmedia's Account ID and click save.
+```json
+"store.product": {
+    "children": [
+      "product-description",
+      "product-description.flixmedia",
+    ]
+}
+```

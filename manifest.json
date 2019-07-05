@@ -1,0 +1,97 @@
+{
+  "name": "flixmedia",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "Flixmedia",
+  "description": "Flix Media",
+  "builders": {
+    "react": "3.x",
+    "graphql": "1.x",
+    "node": "4.x",
+    "messages": "1.x",
+    "store": "0.x"
+  },
+  "credentialType": "absolute",
+  "policies": [
+    {
+      "name": "vbase-read-write"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.flixmedia.com",
+        "path": "/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "myvtex.com",
+        "path": "/_v/graphql/private/v1"
+      }
+    }
+  ],
+  "mustUpdateAt": "2020-01-22",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "scripts": {
+    "postreleasy": "vtex publish --verbose"
+  },
+  "settingsSchema": {
+    "title": "flixmedia",
+    "type": "object",
+    "properties": {
+      "flixDistributor": {
+        "title": "Flix Distributor",
+        "description": "Enter Distributor",
+        "type": "string"
+      },
+      "flixLanguage": {
+        "title": "Flix Language",
+        "description": "Enter Language",
+        "type": "string"
+      },
+      "flixBrand": {
+        "title": "Flix Brand",
+        "description": "Enter Brand",
+        "type": "string"
+      },
+      "flixButton": {
+        "title": "Flix Button",
+        "description": "Enter Button",
+        "type": "string"
+      },
+      "flixInpage": {
+        "title": "Flix Inpage",
+        "description": "Enter Inpage",
+        "type": "string"
+      },
+      "flixButtonImage": {
+        "title": "Flix Button Image",
+        "description": "Enter Button-image",
+        "type": "string"
+      },
+      "flixPrice": {
+        "title": "Flix Price",
+        "description": "Enter Price",
+        "type": "string"
+      },
+      "flixFallback": {
+        "title": "Flix Fallback",
+        "description": "Enter Fallback",
+        "type": "string"
+      }
+    }
+  },
+  "dependencies": {
+    "vtex.styleguide": "9.x",
+    "vtex.product-review-interfaces": "1.x",
+    "vtex.product-summary": "2.x",
+    "vtex.store-header": "2.x",
+    "vtex.store": "2.x",
+    "vtex.product-context": "0.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

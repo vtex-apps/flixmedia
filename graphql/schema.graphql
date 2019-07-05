@@ -1,0 +1,19 @@
+# Default GraphQL Type. You can learn more about GraphQL here: http://graphql.org/learn/
+
+# Specifies the available queries.
+# The resolvers for this query are implemented in here: node/graphql/index.ts
+
+type Query {
+  publicAppSettings: Settings @cacheControl(scope: SEGMENT, maxAge: MEDIUM)
+}
+
+type Settings {
+  flixDistributor: String
+  flixLanguage: String
+  flixBrand: String
+  flixButton: String
+  flixInpage: String
+  flixButtonImage: String
+  flixPrice: String
+  flixFallback: String
+}
