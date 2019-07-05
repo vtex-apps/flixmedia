@@ -1,19 +1,44 @@
-# Flixmedia
+# VTEX FlixMedia
 
-> Flixmedia first party app
+## Description
+VTEX FlixMedia
+https://flixmedia.eu/
 
-## Setup
+## Usage
 
-Open a terminal and type:
+This app uses our store builder with the blocks architecture. To know more about Store Builder [click here.](https://help.vtex.com/en/tutorial/understanding-storebuilder-and-stylesbuilder#structuring-and-configuring-our-store-with-object-object).
 
-```sh
-vtex install vtex.flixmedia@1.x
+We add the product-details as a block in our [Store](https://github.com/vtex-apps/store/blob/master/store/interfaces.json).
+
+To configure or customize this app, you need to import it in your dependencies in `manifest.json`.
+
+```json
+  dependencies: {
+    "vtex.flixmedia": "1.x"
+  }
 ```
 
-Open your admin in the Apps section:
+Then, add `product-details` block into your `interfaces.json` theme as we do in our [Store theme app](https://github.com/vtex-apps/store-theme/blob/master/store/blocks.json).
+Now, select the desired blocks, for example:
 
-https://YOURSTORENAME.myvtex.com/admin/apps/
+```json
+"product-details#default": {
+    "allowed" : [
+        "flixmedia"
+    ],
+    ...
+}
+```
 
-Click in Flixmedia
+### Blocks API
 
-Fill in your Flixmedia's Account ID and click save.
+Add `flexmidia` in your` blocks.json`
+
+```json
+  "product-details#default": {
+    "blocks": [
+      "flixmedia"
+      ...
+    ]
+  }
+```

@@ -1,0 +1,12 @@
+query publicAppSettings {
+  publicAppSettings {
+    flixDistributor
+    flixLanguage
+    flixBrand
+    flixButton
+    flixInpage
+    flixButtonImage
+    flixPrice
+    flixFallback
+  }
+}
