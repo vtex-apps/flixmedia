@@ -3,27 +3,34 @@ import publicAppSettings from './graphql/publicAppSettings.gql'
 import { graphql } from 'react-apollo'
 import withProductContext from './components/withProductContext'
 
-function FlixMedia({ data: { loading }, product }) {
+function FlixMedia({ data: { loading, publicAppSettings }, product, selectedItem }) {
   useEffect(() => {
     if (loading) {
       return
     }
 
+    const referenceId = (
+      selectedItem &&
+      selectedItem.referenceId &&
+      selectedItem.referenceId.length > 0
+    ) ? selectedItem.referenceId[0].Value
+      : ''
+
     const script = document.createElement("script");
     script.src = "//media.flixfacts.com/js/loader.js";
     script.async = true;
     script.setAttribute('id', 'flixmedia')
-    script.setAttribute('data-flix-distributor', '15486');
-    script.setAttribute('data-flix-language', 'f4');
-    script.setAttribute('data-flix-brand', 'brand');
-    script.setAttribute('data-flix-mpn', product.productReference);
-    script.setAttribute('data-flix-ean', product.productReference);
-    script.setAttribute('data-flix-sku', product.selectedSku);
-    script.setAttribute('data-flix-button', 'flix-minisite');
-    script.setAttribute('data-flix-inpage', 'flix-inpage');
-    script.setAttribute('data-flix-button', '');
-    script.setAttribute('data-flix-price', '');
-    script.setAttribute('data-flix-fallback', '');
+    script.setAttribute('data-flix-distributor', publicAppSettings.flixDistributor);
+    script.setAttribute('data-flix-language', publicAppSettings.flixLanguage);
+    script.setAttribute('data-flix-brand', publicAppSettings.flixBrand);
+    script.setAttribute('data-flix-mpn', referenceId);
+    script.setAttribute('data-flix-ean', selectedItem.ean);
+    script.setAttribute('data-flix-sku', selectedItem.itemId);
+    script.setAttribute('data-flix-button', publicAppSettings.flixButton);
+    script.setAttribute('data-flix-inpage', publicAppSettings.flixInpage);
+    script.setAttribute('data-flix-button', publicAppSettings.flixButton || '');
+    script.setAttribute('data-flix-price', publicAppSettings.flixPrice || '');
+    script.setAttribute('data-flix-fallback', publicAppSettings.flixFallback || '');
 
     document.body.appendChild(script);
 
