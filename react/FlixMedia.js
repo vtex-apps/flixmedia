@@ -33,7 +33,6 @@ function FlixMedia({
     script.setAttribute('data-flix-mpn', referenceId)
     script.setAttribute('data-flix-ean', sku.ean)
     script.setAttribute('data-flix-sku', sku.itemId)
-    script.setAttribute('data-flix-button', publicAppSettings.flixButton)
     script.setAttribute('data-flix-inpage', publicAppSettings.flixInpage)
     script.setAttribute('data-flix-button', publicAppSettings.flixButton || '')
     script.setAttribute('data-flix-price', publicAppSettings.flixPrice || '')
