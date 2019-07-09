@@ -3,36 +3,46 @@ import publicAppSettings from './graphql/publicAppSettings.gql'
 import { graphql } from 'react-apollo'
 import withProductContext from './components/withProductContext'
 
-function FlixMedia({ data: { loading, publicAppSettings }, product, selectedItem }) {
+function FlixMedia({
+  data: { loading, publicAppSettings },
+  product,
+  selectedItem,
+}) {
   useEffect(() => {
     if (loading) {
       return
     }
 
-    const referenceId = (
-      selectedItem &&
-      selectedItem.referenceId &&
-      selectedItem.referenceId.length > 0
-    ) ? selectedItem.referenceId[0].Value
-      : ''
+    const sku = selectedItem ? selectedItem : product.items[0]
 
-    const script = document.createElement("script");
-    script.src = "//media.flixfacts.com/js/loader.js";
-    script.async = true;
+    const referenceId =
+      sku && sku.referenceId && sku.referenceId.length > 0
+        ? sku.referenceId[0].Value
+        : ''
+
+    const script = document.createElement('script')
+    script.src = '//media.flixfacts.com/js/loader.js'
+    script.async = true
     script.setAttribute('id', 'flixmedia')
-    script.setAttribute('data-flix-distributor', publicAppSettings.flixDistributor);
-    script.setAttribute('data-flix-language', publicAppSettings.flixLanguage);
-    script.setAttribute('data-flix-brand', publicAppSettings.flixBrand);
-    script.setAttribute('data-flix-mpn', referenceId);
-    script.setAttribute('data-flix-ean', selectedItem.ean);
-    script.setAttribute('data-flix-sku', selectedItem.itemId);
-    script.setAttribute('data-flix-button', publicAppSettings.flixButton);
-    script.setAttribute('data-flix-inpage', publicAppSettings.flixInpage);
-    script.setAttribute('data-flix-button', publicAppSettings.flixButton || '');
-    script.setAttribute('data-flix-price', publicAppSettings.flixPrice || '');
-    script.setAttribute('data-flix-fallback', publicAppSettings.flixFallback || '');
+    script.setAttribute(
+      'data-flix-distributor',
+      publicAppSettings.flixDistributor
+    )
+    script.setAttribute('data-flix-language', publicAppSettings.flixLanguage)
+    script.setAttribute('data-flix-brand', publicAppSettings.flixBrand)
+    script.setAttribute('data-flix-mpn', referenceId)
+    script.setAttribute('data-flix-ean', sku.ean)
+    script.setAttribute('data-flix-sku', sku.itemId)
+    script.setAttribute('data-flix-button', publicAppSettings.flixButton)
+    script.setAttribute('data-flix-inpage', publicAppSettings.flixInpage)
+    script.setAttribute('data-flix-button', publicAppSettings.flixButton || '')
+    script.setAttribute('data-flix-price', publicAppSettings.flixPrice || '')
+    script.setAttribute(
+      'data-flix-fallback',
+      publicAppSettings.flixFallback || ''
+    )
 
-    document.body.appendChild(script);
+    document.body.appendChild(script)
 
     return () => {
       const previousScript = document.getElementById('flixmedia')
@@ -40,7 +50,7 @@ function FlixMedia({ data: { loading, publicAppSettings }, product, selectedItem
         previousScript.parentNode.removeChild(previousScript)
       }
     }
-  }, [loading, product])
+  }, [loading, product, selectedItem, publicAppSettings])
 
   return (
     <div>
