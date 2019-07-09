@@ -12,7 +12,7 @@ function FlixMedia({ data: { loading }, product }) {
     const script = document.createElement("script");
     script.src = "//media.flixfacts.com/js/loader.js";
     script.async = true;
-    script.setAttribute('flixmedia')
+    script.setAttribute('id', 'flixmedia')
     script.setAttribute('data-flix-distributor', '15486');
     script.setAttribute('data-flix-language', 'f4');
     script.setAttribute('data-flix-brand', 'brand');
