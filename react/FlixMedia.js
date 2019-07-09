@@ -36,12 +36,11 @@ function FlixMedia({ data: { loading }, product }) {
   }, [loading, product])
 
   return (
-      <div>
-        <div id="flix-minisite"></div>
-        <div id="flix-inpage"></div>
-      </div>
-    );
-  }
+    <div>
+      <div id="flix-minisite"></div>
+      <div id="flix-inpage"></div>
+    </div>
+  )
 }
 
 const withPublicAppSettings = graphql(publicAppSettings, {
