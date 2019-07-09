@@ -1,11 +1,9 @@
-import React, { Component, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import publicAppSettings from './graphql/publicAppSettings.gql'
 import { graphql } from 'react-apollo'
 import withProductContext from './components/withProductContext'
 
-function FlixMedia({ data, product }) {
-  const { data: { loading }, product } = this.props
-
+function FlixMedia({ data: { loading }, product }) {
   useEffect(() => {
     if (loading) {
       return
