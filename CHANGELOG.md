@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2019-07-09
+
 ### Fixed
 - Params passed to Flixmedia
 - Loading of Flixmedia script
