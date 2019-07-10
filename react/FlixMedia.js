@@ -28,10 +28,15 @@ function FlixMedia({
       'data-flix-distributor',
       publicAppSettings.flixDistributor
     )
+
+    if (referenceId) {
+      script.setAttribute('data-flix-mpn', referenceId)
+    } else {
+      script.setAttribute('data-flix-ean', sku.ean)
+    }
+
     script.setAttribute('data-flix-language', publicAppSettings.flixLanguage)
     script.setAttribute('data-flix-brand', publicAppSettings.flixBrand)
-    script.setAttribute('data-flix-mpn', referenceId)
-    script.setAttribute('data-flix-ean', sku.ean)
     script.setAttribute('data-flix-sku', sku.itemId)
     script.setAttribute('data-flix-inpage', publicAppSettings.flixInpage)
     script.setAttribute('data-flix-button', publicAppSettings.flixButton || '')
