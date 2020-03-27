@@ -29,10 +29,10 @@ function FlixMedia({
       publicAppSettings.flixDistributor
     )
 
-    if (referenceId) {
-      script.setAttribute('data-flix-mpn', referenceId)
-    } else {
+    if (sku.ean) {
       script.setAttribute('data-flix-ean', sku.ean)
+    } else {
+      script.setAttribute('data-flix-mpn', referenceId)
     }
 
     script.setAttribute('data-flix-language', publicAppSettings.flixLanguage)

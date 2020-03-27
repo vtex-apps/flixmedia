@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2020-03-27
+### Changed
+- Use Ean value first and `referenceId` as a fallback
+
 ## [0.1.1] - 2019-08-29
 ### Added
 - Docs builder 🚀
