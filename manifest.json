@@ -1,7 +1,6 @@
 {
   "name": "flixmedia",
   "vendor": "vtex",
-  "version": "0.1.2",
   "title": "Flixmedia",
   "description": "Flix Media",
   "builders": {
