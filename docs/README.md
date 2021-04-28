@@ -2,6 +2,10 @@
 
 # Flixmedia
 
+> 🚧 WARNING
+> 
+> This app is no longer supported. Consider using the [Flixmedia](https://apps.vtex.com/acupula-flixmedia/p) app by ACCT as an alternative.
+
 Flixmedia first party integration app. The [solution](https://flixmedia.eu/) enhances your website content, capturing retail partners, engaging shoppers, and increasing sale rates.
 
 ## Configuration
