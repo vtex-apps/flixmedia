@@ -1,5 +1,7 @@
 # VTEX FlixMedia
 
+⚠️  `WARNING`: _This app is no longer supported. We recommend the [Flixmedia](https://apps.vtex.com/acupula-flixmedia/p) app by ACCT as an alternative._
+
 ## Description
 VTEX FlixMedia
 https://flixmedia.eu/
