@@ -2,7 +2,7 @@
 
 > 🚧 WARNING
 > 
-> This app is no longer supported. Consider using the [Flixmedia](https://apps.vtex.com/acupula-flixmedia/p) app by ACCT as an alternative.
+> This app is now supported by ACCT. For more information and support, email `support@acct.global`.
 
 ## Description
 VTEX FlixMedia
